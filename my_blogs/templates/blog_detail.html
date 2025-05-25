@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ blog.title }} {% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-body">
+                {% if blog.image %}
+                <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="img-fluid">
+                {% endif %}
+                <h2>{{ blog.title }}</h2>
+                <p>{{ blog.content }}</p>
+
+                <p>Published on: {{ blog.created_at }}</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
